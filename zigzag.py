@@ -4,7 +4,9 @@ import time
 import sys
 
 
-def run_zigzag(width: int = 20, speed: float = 0.1, char: str = "*", count: Optional[int] = None) -> None:
+def run_zigzag(
+    width: int = 20, speed: float = 0.1, char: str = "*", count: Optional[int] = None
+) -> None:
     """Run the zigzag animation.
 
     Args:
@@ -42,10 +44,22 @@ def run_zigzag(width: int = 20, speed: float = 0.1, char: str = "*", count: Opti
 
 def parse_args(argv=None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Zigzag terminal animation")
-    parser.add_argument("--width", "-w", type=int, default=20, help="Maximum indentation (spaces)")
-    parser.add_argument("--speed", "-s", type=float, default=0.1, help="Seconds per frame")
-    parser.add_argument("--char", "-c", type=str, default="*", help="Character to draw the block")
-    parser.add_argument("--count", "-n", type=int, default=None, help="Number of frames to run (default: infinite)")
+    parser.add_argument(
+        "--width", "-w", type=int, default=20, help="Maximum indentation (spaces)"
+    )
+    parser.add_argument(
+        "--speed", "-s", type=float, default=0.1, help="Seconds per frame"
+    )
+    parser.add_argument(
+        "--char", "-c", type=str, default="*", help="Character to draw the block"
+    )
+    parser.add_argument(
+        "--count",
+        "-n",
+        type=int,
+        default=None,
+        help="Number of frames to run (default: infinite)",
+    )
     return parser.parse_args(argv)
 
 
